@@ -21,16 +21,18 @@ public extension UIButton {
 
 public extension UILabel {
 
-    /**
-     To set an icon, use i.e. `barName.GMDIcon = GMDType.GMDPublic`
-     */
+    /// To set an icon, use i.e. `barName.GMDIcon = GMDType.GMDPublic`
+    ///
+    /// - Parameters:
+    ///   - icon: the icon
+    ///   - iconSize: the font size
     func setGMDIcon(icon: GMDType, iconSize: CGFloat) {
 
         FontLoader.loadFontIfNeeded()
         let googleMaterialDesignFont = UIFont(name: GMDStruct.FontName, size: iconSize)
         assert(googleMaterialDesignFont != nil, GMDStruct.ErrorAnnounce)
         font = googleMaterialDesignFont!
-        text = newValue.text
+        text = icon.text
     }
 
     /**
